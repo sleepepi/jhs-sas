@@ -1,0 +1,19 @@
+#ignore files and folders that begin with underscore (underscore is added to denote intention not to track file or folder)
+_*
+/**/_*
+
+#ignore datasets with "real" data
+/**/*.sas7bdat
+/**/*.csv
+/**/*.xls*
+/**/*.doc*
+*.txt
+/**/*.txt
+
+#ignore reports derived from datasets
+*.pdf
+/**/*.pdf
+
+#ignore miscellaneous
+Thumbs.db
+.DS_Store
