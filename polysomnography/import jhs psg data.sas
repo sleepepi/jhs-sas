@@ -7,15 +7,16 @@
 * Establish temporary network drive
 ***************************************************************************************;
   x net use y: /d;
-  x net use y: "\\rfa01\BWH-SleepEpi\projects\src\jhs\Data\PSG" /P:No;
+  x net use y: "\\rfa01\BWH-SleepEpi-jhs\Data\PSG" /P:No;
 
 ***************************************************************************************;
 * Create input statement file based on PSG report variables
 ***************************************************************************************;
   proc import out=reportvars
-      datafile = "&jhspath.\SAS\polysomnography\jhs psg report variables.xls"
-      dbms = excel2000
+      datafile = "&jhspath.\SAS\polysomnography\jhs psg report variables.csv"
+      dbms = csv
       replace;
+      guessingrows=1000;
     getnames = yes;
   run;
 
@@ -29,7 +30,7 @@
     file "&jhspath.\SAS\polysomnography\jhs psg input statement.sas" MOD;
     set reportvars;
     length out $32000.;
-    out = strip(input_code) || " " || strip(f9);
+    out = strip(input_code) || " " || strip(Input_Code_2);
     put out;
   run;
   data _null_;
