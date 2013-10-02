@@ -461,8 +461,8 @@
   * exclude studies where total sleep time is zero;
   ************************************************************************************;
     if slpprdp gt 0 then do;
-      oahi4  = 60*(hrembp4 +hrop4 + hnrbp4 + hnrop4 + oarbp +oarop + oanbp +oanop ) / slpprdp;
-      oahi3 = 60*(hrembp3 +hrop3 + hnrbp3 + hnrop3 + oarbp +oarop + oanbp +oanop ) / slpprdp;
+      oahi4  = 60*(hrembp4 +hrop4 + hnrbp4 + hnrop4 + oarbp +oarop + oanbp +oanop + urbp4 + urop4 + unrbp4 + unrop4 ) / slpprdp;
+      oahi3 = 60*(hrembp3 +hrop3 + hnrbp3 + hnrop3 + oarbp +oarop + oanbp +oanop + urbp3 + urop3 + unrbp3 + unrop3) / slpprdp;
     end;
     label oahi4 = 'Calculated - Obstructive apnea (all desats) Hypopnea (4% desat) Index'
       oahi3 = 'Calculated - Obstructive apnea (all desats) Hypopnea (3% desat) Index';
