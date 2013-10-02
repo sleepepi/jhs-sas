@@ -133,7 +133,7 @@
 ***************************************************************************************;
 * READ IN SCORED REPORT FROM RFA SPACE
 ***************************************************************************************;
-  proc import out=prephys datafile="\\rfa01\bwh-sleepepi\projects\src\jhs\data\actigraphy\exports\Batch\Batch_DailyDetailed.csv"
+  proc import out=prephys datafile="&jhspath.\actigraphy\exports\Batch\Batch_DailyDetailed.csv"
     DBMS=CSV REPLACE; GETNAMES=YES; DATAROW=2;
   run;
 
